@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
-
-from .context import sample
-
-import unittest
+import pytest
 
 
-class BasicTestSuite(unittest.TestCase):
-    """Basic test cases."""
-
-    def test_absolute_truth_and_meaning(self):
-        assert True
+# @pytest.fixture
+# def draw():
 
 
-if __name__ == '__main__':
-    unittest.main()
+# def test_setup_fails(something, other):
+#     pass
+
+
+# def test_call_fails(something):
+#     assert 0
+
+
+# def test_fail2():
+#     assert 0
