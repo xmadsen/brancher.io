@@ -11,7 +11,7 @@ def view():
     return View(test_tree)
 
 
-def test_format_tree_in_box_renders_new_empty_tree_correctly(view):
+def test_format_tree_in_box_renders_newborn_tree_correctly(view):
     assert view.format_tree_in_box() == (
         "│                                                 │\n"
         "│                                                 │\n"

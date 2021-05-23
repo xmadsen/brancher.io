@@ -12,3 +12,6 @@ class Game:
         while 1:
             self.tick()
             self.view.draw()
+
+    def save(self):
+        self.view.tree.save()

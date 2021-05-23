@@ -9,6 +9,8 @@ class View:
         self.update()
 
     def update(self):
+        self.tree.tick()
+
         wood_detail = (
             self.tree.species.wood_type + " " + WOOD_EMOJI[self.tree.species.wood_type]
         ).center(15)
@@ -18,7 +20,7 @@ class View:
         tree_in_box = self.format_tree_in_box()
         self.ui_text = UI_TEXT.substitute(
             name=self.tree.name.ljust(8),
-            age=str(self.tree.age()).rjust(8),
+            age=str(self.tree.age_secs).rjust(8),
             wood_detail=wood_detail,
             species_detail=species_detail,
             tree=tree_in_box,

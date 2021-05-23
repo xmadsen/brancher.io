@@ -7,4 +7,8 @@ if __name__ == "__main__":
     tree = Tree("Schultzy", TREE_SPECIES["Loblolly Pine"])
     view = View(tree)
     game = Game(view)
-    game.run()
+    try:
+        game.run()
+    except KeyboardInterrupt:
+        print("\nInterrupted, saving tree.", end="")
+        game.save()
