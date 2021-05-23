@@ -3,6 +3,7 @@ import pytest
 
 from brancher.tree import Tree
 from brancher.constants import TREE_SPECIES
+from brancher.node import Node
 
 
 @pytest.fixture
@@ -12,6 +13,10 @@ def test_tree():
 
 def test_can_create_tree(test_tree):
     assert isinstance(test_tree, Tree)
+
+
+def test_tree_starts_with_root_node(test_tree):
+    assert isinstance(test_tree.root_node, Node)
 
 
 # def

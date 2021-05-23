@@ -1,5 +1,6 @@
 from brancher.constants import WOOD_EMOJI
 from brancher.species import Species
+from brancher.node import Node
 import datetime, time
 
 
@@ -9,6 +10,7 @@ class Tree:
         self.species = species
         self.creation_time = time.time()
         self.stage = "seed"
+        self.root_node = Node()
 
     def age(self) -> int:
         """Return age of tree in seconds."""
