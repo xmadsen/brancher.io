@@ -9,23 +9,22 @@ class Tree:
     def __init__(self, name: str, species: Species):
         self.name = name
         self.species = species
-        self.creation_time = time.time()
+        self.creation_time = int(time.time())
         self.stage = "seed"
         self.root_node = RootNode()
         self.age_secs = 0
-
-    def age(self) -> int:
-        """Return age of tree in seconds."""
-        return int(time.time() - self.age_secs)
+        self.last_live_time = int(self.creation_time)
 
     def save(self):
-        self.age_secs = self.age()
+        self.age_secs += int(time.time() - self.last_live_time)
+        self.last_live_time = int(time.time())
         with open(f".tree_{self.name}.pkl", "wb") as f:
             # Pickle the 'data' dictionary using the highest protocol available.
             pickle.dump(self, f, pickle.HIGHEST_PROTOCOL)
 
     def tick(self):
-        self.age_secs = self.age()
+        self.age_secs += int(time.time() - self.last_live_time)
+        self.last_live_time = int(time.time())
 
     @classmethod
     def load(self, pickled_tree_path):
