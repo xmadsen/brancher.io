@@ -11,7 +11,7 @@ class Tree:
         self.species = species
         self.creation_time = int(time.time())
         self.stage = "seed"
-        self.root_node = RootNode()
+        self.root_node = RootNode(species=self.species)
         self.age_secs = 0
         self.last_live_time = int(self.creation_time)
 
